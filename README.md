@@ -6,9 +6,18 @@ React, TypeScript, Vite e Auth0. Login pelo Universal Login; chamadas à API com
 
 Requisito: Node.js 22.12 ou superior.
 
+Para iniciar front e back juntos, execute na pasta `pf`:
+
 ```powershell
-Copy-Item .env.example .env
-# Edite .env com os dados do SEU Auth0.
+.\iniciar.ps1
+```
+
+Abra **http://localhost:5173**. O script prepara `.env.development.local` com os identificadores públicos do Auth0 da PF. O back executa em `http://localhost:8084` com banco persistente em arquivo. Para parar, execute `.\parar.ps1`. Veja `pf/LEIA-PRIMEIRO.md` e `pf/AUTH0-LOCAL.md` para o uso e os últimos ajustes do login real.
+
+Para iniciar somente o front nesta pasta:
+
+```powershell
+Copy-Item .env.example .env.development.local
 npm ci
 npm run dev
 ```
